@@ -1,3 +1,10 @@
+/* 
+
+les imports d'autres fichiers CSS sont OBLIGATOIREMENT a faire en tout premier dans un fichier CSS
+
+*/
+
+
 /*
 Unités de dimension les plus utilisés en web
 
@@ -6,12 +13,122 @@ em          =>  cadratin : unité de mesure en print sur les presses.
                 le cadratin se calcul part rapport à la taille de la police dans l'élément parent
 rem         =>  cadratin racine : se calcul part rapport à la taille de la police dans l'élément racine
 %           =>  Pourcentage, de l'espace disponible autour de l'élément
-vw & vh     =>  vw : viewport widthn; vh : viewport height
+vw & vh     =>  vw : viewport width; vh : viewport height
+                50 vw => 50% de la largeur de l'écran de l'appareil
 
 */
 
+/*
+
+sélecteur CSS :
+    ATTENTION : en CSS, on impacte tous les éléments correspondants aux sélecteurs écrit
+    
+    sélecteurs simples : balise, identifiant et par classe
+        p                   => tous les éléments p rencontrés dans le document
+                            pas de caractère spécial devant l'élément donc il s'agit d'une balise
+        #special            => l'élément ayant comme attribut id="special"
+                            le caractère # indique qu'on se réfère à l'id
+                            => les id sont uniques dans la page
+        .titreDeChapitre    => les éléments ayant au moins la class="titreDeChapitre" 
+                            le caractère . indique qu'on se réfère à une classe
+                            => ATTENTION : si un élément class="titreDeChapitre toto tata" comme il possède au moins
+                            la classe titreDeChapitre alors il sera trouvé
+    Sélecteur avancés : selon les attributs                                  
+        [data-test]                     => les éléments ayant au moins un attribut nommé data-test
+        [alt]                           => les éléments ayant au moins un attribut alt
+        [data-test="toto"]              => les éléments ayant au moins un attribut nommé data-test="toto"
+        [data-col][data-line]           => les éléments ayant au moins un attribut data-col ET un attribut data-line
+        [data-col="3"][data-line]       => les éléments ayant au moins un attribut data-col="3" ET un attribut data-line
+        [data-col][data-line="2"]       => les éléments ayant au moins un attribut data-col ET un attribut data-line="2"
+        [data-col="3"][data-line="2"]   => les éléments ayant au moins un attribut data-col="3" ET un attribut data-line="2"
+
+    Sélecteur avancés : mélange des sélecteurs simples et ou de sélecteurs avancés
+        h3.titreDeChapitre  => tous les titre h3 ayant la classe titreDeChapitre
+                            si l'élément et la classe sont collés, c'est que l'élément doit avoir au moins cette classe
+        article #special    => un élément avec id="special" enfant direct OU indirect d'un élément article
+                            si l'élément et l'id recherché sont séparés, cela indique une filiation directe ou indirecte
+        main > p            => tous les éléments p enfants directs d'un élément main
+                            le chevron fermant > entre les deux éléments indique une filiation directe.
+        p#special           => un élément p avec id="special"
+        .toto.tata          => un élément ayant au moins les deux classes suivantes toto et tata
+        .toto .tata         => un élément ayant au moins la classe tata enfant direct ou indirect d'un élément ayant au moins la classe toto
+    
+    Pseudo sélecteurs (sélécteur qui permet des "tri" ou des "filtres" sur des sélecteurs )
+        p:nth-of-type(odd)  => tous les paragraphes du document en position impaire
+                            nth-child() le(s) nième(s) enfant(s)
+                            les paramètres : 
+                                odd => impaire - event => paire, Xn => tous les X enfants , Y => le Yème
+                                2n+1
+
+        article:last-child:nth-of-type(4n+3)    => l'article doit être le dernier article et le troisième article d'une ligne de 4
+                                                paramètres :    4n => le nombre d'élément par ligne
+                                                                +3 => le troisième de la ligne
+
+*/
+
+
+/* déclaration du root */
 :root{
     font-family:Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     line-height: 1.7rem;
 }
+
+/* déclarations générales */
+
+h1{
+    margin: 0;
+}
+
+/* déclaration des classes CSS */
+
+.rouge-gras{
+    color: #b00000;
+    font-weight: bold;
+}
+
+/* déclarations de structure  */
+
+body{
+    margin: 0;
+}
+
+body > main{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body > main article{
+    padding: 0.5rem;
+}
+
+/* les media queries */
+
+@media (min-width: 576px) { 
+    body > main{
+        width: 540px;
+    }
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    body > main{
+        width: 720px;
+    }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    
+ }
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    
+ }
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+    
+ }

@@ -1,0 +1,17 @@
+/*
+Unités de dimension les plus utilisés en web
+
+px          =>  Pixel
+em          =>  cadratin : unité de mesure en print sur les presses. 
+                le cadratin se calcul part rapport à la taille de la police dans l'élément parent
+rem         =>  cadratin racine : se calcul part rapport à la taille de la police dans l'élément racine
+%           =>  Pourcentage, de l'espace disponible autour de l'élément
+vw & vh     =>  vw : viewport widthn; vh : viewport height
+
+*/
+
+:root{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+}

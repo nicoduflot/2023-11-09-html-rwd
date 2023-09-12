@@ -4,6 +4,7 @@ les imports d'autres fichiers CSS sont OBLIGATOIREMENT a faire en tout premier d
 
 */
 @import url('./BebasNeueRegular.css');
+@import url('./bootstrap-icons.css');
 
 /*
 Unités de dimension les plus utilisés en web
@@ -77,9 +78,14 @@ sélecteur CSS :
     --lien-nav-survol: white;
     --lien-nav-bg-color: var(--lien-nav-survol);
     --lien-nav-bg-survol-color: var(--lien-nav);
+    --gutter: 0.5rem;
 }
 
 /* déclarations générales */
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
 
 h1{
     margin: 0;
@@ -97,6 +103,15 @@ h1, h2, h3, h4, h5, h6{
     font-weight: bold;
 }
 
+.header-padding{
+    padding: var(--gutter);
+}
+
+#before-special::before{
+    font-family: 'bootstrap-icons';
+    content: '\f134';
+}
+
 /* déclarations de structure  */
 
 body{
@@ -106,7 +121,7 @@ body{
 body > nav ul{
     line-height: 2rem;
     list-style-type: none;
-    padding: 0.5rem;
+    padding: var(--gutter);
     margin: 0;
 }
 
@@ -118,6 +133,12 @@ body > nav a{
     border-color: transparent;
     border-bottom-color: grey;
     text-decoration: none;
+    color: var(--lien-nav);
+}
+
+body > nav a:hover{
+    color: var(--lien-nav-survol);
+    background-color: var(--lien-nav-bg-survol-color);
 }
 
 body > main,
@@ -128,7 +149,7 @@ body > main,
 }
 
 body > main article{
-    padding: 0.5rem;
+    padding: var(--gutter);
 }
 
 /* les media queries */
@@ -146,6 +167,24 @@ body > main article{
     .container{
         width: 720px;
     }
+
+    body > nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+    body > nav li:not( body > nav li:last-child ){
+        /* ici, on défini une propriété pour tous les éléments de la liste sauf pour le dernier */
+        border-right: 1px solid var(--lien-nav);
+    }
+
+    body > nav a{
+        border-bottom: unset;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
  }
 
 /* Large devices (desktops, 992px and up) */

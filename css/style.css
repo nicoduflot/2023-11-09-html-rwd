@@ -3,7 +3,7 @@
 les imports d'autres fichiers CSS sont OBLIGATOIREMENT a faire en tout premier dans un fichier CSS
 
 */
-
+@import url('./BebasNeueRegular.css');
 
 /*
 Unités de dimension les plus utilisés en web
@@ -72,12 +72,22 @@ sélecteur CSS :
     font-family:Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     line-height: 1.7rem;
+    --police-titre: 'BebasNeueRegular';
+    --lien-nav: #b00000;
+    --lien-nav-survol: white;
+    --lien-nav-bg-color: var(--lien-nav-survol);
+    --lien-nav-bg-survol-color: var(--lien-nav);
 }
 
 /* déclarations générales */
 
 h1{
     margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--police-titre);
+    letter-spacing: 2px;
 }
 
 /* déclaration des classes CSS */
@@ -93,7 +103,25 @@ body{
     margin: 0;
 }
 
-body > main{
+body > nav ul{
+    line-height: 2rem;
+    list-style-type: none;
+    padding: 0.5rem;
+    margin: 0;
+}
+
+body > nav a{
+/* équivalent à body > nav > div > ul > li > a  */
+    display: block;
+    border-style: solid;
+    border-bottom-width: 1px;
+    border-color: transparent;
+    border-bottom-color: grey;
+    text-decoration: none;
+}
+
+body > main,
+.container{
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -106,29 +134,48 @@ body > main article{
 /* les media queries */
 
 @media (min-width: 576px) { 
-    body > main{
+    body > main,
+    .container{
         width: 540px;
     }
  }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
-    body > main{
+    body > main,
+    .container{
         width: 720px;
     }
  }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-    
+    body > main,
+    .container{
+        width: 960px;
+    }
  }
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
-    
+    body > main,
+    .container{
+        width: 1140px;
+    }
  }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) { 
-    
+    body > main,
+    .container{
+        width: 1320px;
+    }
+ }
+
+ /* XXX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1600px) { 
+    body > main,
+    .container{
+        width: 1560px;
+    }
  }

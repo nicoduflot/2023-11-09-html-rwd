@@ -96,6 +96,15 @@ h1, h2, h3, h4, h5, h6{
     letter-spacing: 2px;
 }
 
+table{
+    border-collapse:collapse;
+}
+
+td{
+    border: 1px solid black;
+    padding: 1rem;
+}
+
 /* déclaration des classes CSS */
 
 .rouge-gras{
@@ -110,6 +119,14 @@ h1, h2, h3, h4, h5, h6{
 #before-special::before{
     font-family: 'bootstrap-icons';
     content: '\f134';
+}
+
+.fond-rouge-transparent{
+    background-color: rgba(176, 0, 0, 0.5);
+}
+
+.majuscule{
+    text-transform: uppercase;
 }
 
 /* déclarations de structure  */

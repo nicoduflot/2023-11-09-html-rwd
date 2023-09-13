@@ -45,10 +45,98 @@
             % modulo  5%2 = 1 (le reste de la division entiere 5 / 2)
             ** puissance 2**2 => 2 puissance 2 (4), 2**3 2 puissance 3 (8)
             
-            
+            Types de variables : 
+            number => les nombres : 12  12.5
+            string => chaîne de caractère  'toto'  '12'
+
+            bool => Booléen true ou false
+                            vrai    faux
+            (algèbre de bool)
+
+            Array => tableaux 
             */
 
+            let tab = [12, true, 'toto']; //[12, true, 'toto']
+            console.log(tab);
+            console.log(tab.length);
+
+            /*
+            Object => Objet 
+
+            JSON => JavaScript Object Notation
+
+            */
+
+            fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(json => console.log(json));
+
+            /*
+            le JSON est le système de transfer de données le plus utilisé dans les API
+
+            opérateurs logiques => permet de faire du conditionnement
+
+            si a = 3 et b = 3 alors
+
+            && (ET)
+            a && b  => si a est vrai et b est vrai  =>  vrai
+                    => si a est vrai et b est faux  =>  faux
+                    => si a est faux et b est vrai  =>  faux
+                    => si a est faux et b est faux  =>  faux
+
+            || (OU) ( | est un pipe  AltGr + 6 )
+            a || b  => si a est vrai ou b est vrai  =>  vrai
+                    => si a est vrai ou b est faux  =>  vrai
+                    => si a est faux ou b est vrai  =>  vrai
+                    => si a est faux ou b est faux  =>  faux
+
+            ! (NON)
+            !a      => si a est vrai    =>  faux
+                    => si a est faux    =>  vrai
+
+            Comparaison 
+
+            <  strictement inférieur 1 < 2 => vrai
+            >  strictement supérieur 2 > 1 => vrai
+
+            <= inférieur ou égal 2 >= 2  => vrai ; 3 >= 2 => vrai
+            >= supérieur ou égal 2 <= 2  => vrai ; 1 <= 2 => vrai
+
+            ==  égalité sur la valeur   12 == 12  => vrai ; '12' == 12 => vrai
+            !=  inégalité sur la valeur 12 != 12  => faux ; '12' != 12 => faux
+            
+            ===  égalité sur la valeur ET le type 12 === 12  => vrai ; '12' === 12 => faux
+            !==  inégalité sur la valeur 12 !== 12  => faux ; '12' !== 12 => vrai
+
+            */
+
+            console.log('----------- exemples de calculs -----------');
+            let a = 12;
+            let b = 24;
+
+            // ` => backtick ou apostrophe inversée
+            // ` s'obtient en pressant AltGr + 7 et ensuite la touche espace ò - ô
+            // ` l'apostrophe passe facilement `
+            console.log('l\'apostrophe passe facilement');
+            console.log(` "l'apostrophe" passe facilement `);
+            console.log('a : ' + a + ', b : ' + b); 
+            console.log(`a : ${a}, b : ${b}`); 
+            console.log(`a + b : ${a + b}`);
+            console.log(`a - b : ${a - b}`);
+            console.log(`a * b : ${a * b}`);
+            console.log(`a**b  : ${a**b}`);
+            console.log(`a / b : ${a / b}`);
+            console.log(`a % b : ${a % b}`);
+
+            console.log('-------------- exemples de comparaison -------------');
+            console.log(` '12' == 12 => ${'12' == 12} `);       // true
+            console.log(` '12' === 12 => ${'12' === 12} `);     // false
+            
+            console.log(` '12' != 12 => ${'12' != 12} `);       // false
+            console.log(` '12' !== 12 => ${'12' !== 12} `);     // true
+
         </script>
+        <script src="./js/script.js"></script>
     </head>
     <body>
         <header>
@@ -77,19 +165,109 @@
                         <h2>Les bases du Javascript</h2>
                     </header>
                     <main>
-                        
+                        <h3>Ecmascript</h3>
+                    <p>
+                        Ecmascript (es) est une norme sur laquelle s'appuie JS. (ActionScript => flash, TypeScript).
+                    </p>
+                    <p>
+                        La dernière norme ecmascript es7 (2017, très peu de différences avec es6)
+                    </p>
+                    <ul>
+                        <li>es1 - Juin 1997</li>
+                        <li>es2 - Juin 1998</li>
+                        <li>es2 - Décembre 1999</li>
+                        <li>es4 - version abandonnée</li>
+                        <li>es5 - Décembre 2009</li>
+                        <li>es6 - Juin 2015</li>
+                        <li>es7 - Juin 2016</li>
+                        <li>es8 - Juin 2017</li>
+                        <li>es9 - Juin 2018</li>
+                    </ul>
+                    <p>
+                        Jusqu'en 2010, JS était mal considéré par les développeurs ( peu normé, trop permissif )
+                    </p>
+                    <p>
+                        L'arrivée de Google Chrome, avec en plus l'envie de Google de refaire fonctionner correctement
+                        JS.
+                        Création du moteur d'interprétation V8.
+                        => un boost des capacitées de JS et son éxécution
+                    </p>
+                    <p>
+                        Grâce au V8, des nouveau langages ou méthode de développement sont arrivées, notemment NodeJs
+                        (2009),
+                        qui s'appuis sur JS mais s'éxécute sur le serveur
+                    </p>
+                    <p>
+                        La convention du code en es6 est visible sur Github
+                        <a href="https://github.com/elierotenberg/coding-styles/blob/master/es6.md" target="_blank">
+                            es6
+                        </a>
+                    </p>
                     </main>
                     <footer>
                         
                     </footer>
                 </article>
-                <aside>
-
-                </aside>
+                <article>
+                    <header>
+                        <h2>Exemple de manipulation du DOM</h2>
+                    </header>
+                    <main>
+                        <h3>Le DOM : Document Object Model</h3>
+                        <p>
+                            le <b>DOM</b> nous permet de repérer, analyser, modifier et
+                            supprimer des éléments de la page HTML
+                        </p>
+                        <p>
+                            Il faut que tous les éléments soient chargés pour qu'il soit
+                            possible d'agir sur eux avec JS.
+                            On écoute l'évènement de la fenêtre DOMContentLoaded qui survient
+                            quand la page est totalement chargée.
+                        </p>
+                        <p>
+                            <button id="btnClick">Cliquez-moi !</button>
+                        </p>
+                        <h3>Repérer plusieurs éléments semblables</h3>
+                        <table id="tabTdClick">
+                            <tr>
+                                <td class="majuscule">1</td>
+                                <td class="majuscule">2</td>
+                                <td class="majuscule">3</td>
+                                <td class="majuscule">4</td>
+                            </tr>
+                            <tr>
+                                <td class="majuscule">5</td>
+                                <td class="majuscule">6</td>
+                                <td class="majuscule">7</td>
+                                <td class="majuscule">8</td>
+                            </tr>
+                            <tr>
+                                <td class="majuscule">9</td>
+                                <td class="majuscule">10</td>
+                                <td class="majuscule">11</td>
+                                <td class="majuscule">12</td>
+                            </tr>
+                            <tr>
+                                <td class="majuscule">13</td>
+                                <td class="majuscule">14</td>
+                                <td class="majuscule">15</td>
+                                <td class="majuscule">16</td>
+                            </tr>
+                        </table>
+                        <h3>Récupérer une information et l'afficher sur la page</h3>
+                        <p>
+                            <input type="text" id="textInput"> <button id="btnInput"> Afficher la valeur </button> 
+                            <span id="spanInput"></span>
+                        </p>
+                    </main>
+                </article>
             </section>
         </main>
         <footer>
 
         </footer>
     </body>
+    <script>
+        console.log('fin de la page');
+    </script>
 </html>

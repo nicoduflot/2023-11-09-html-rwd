@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Formation HTML - Javascript</title>
+        <meta description="Ce site est le code conçu avec les stagiaires TP concepteurs designer UI" />
+        <link rel="stylesheet" href="./css/style.css" media="screen" />
+    </head>
+    <body>
+        <header>
+            <div class="container header-padding">
+                <h1>Formation HTML - JS</h1>
+            </div>
+        </header>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li>
+                        <a href="./index.html" target="_self" title="Lien vers la page d'accueil">
+                            Accueil
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./javascript.html" target="_self" title="Lien vers l'initiation à Javascript'">Javascript</a>
+                    </li>
+                    <li>
+                        <a href="./media.html" target="_self" title="Lien vers les media en web'">Media</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+            <section>
+                <article>
+                    <header>
+                        <h2>Les bases HTML : les media</h2>
+                    </header>
+                    <main>
+                        <h3>Les images</h3>
+                        <p>
+                            Par défaut, on peut afficher une image à l'aide de la balise <code>&lt;img /&gt;</code>.
+                        </p>
+                        <p>
+                            Avec HTML5, une balise d'encadrement de media a été créé, <code>&lt;figure&gt;</code>.
+                            Figure peut servire de cadre, et elle possède en plus une balise enfant optionnelle,
+                            <code>&lt;figcaption&gt;</code>,
+                            qui permet d'ajouter une légende à l'image.
+                        </p>
+                        <h3>La balise img</h3>
+                        <img src="./images/poster-twitch-synthwave.jpg" alt="" />
+                        <h3>Les proportions</h3>
+                        <p>
+                            Attention, si on n'indique qu'une largeur à une image, la hauteur se recalcule automatiquement.
+                        </p>
+                        <p>
+                            Si on veut réduire une taille en imposant une hauteur et une largeur, il faudra respecter les proportions (aussi nommé "l'homothétie"), le rapport hauteur / largeur
+                        </p>
+                        
+                        <h3>Une balise img avec la balise figure</h3>
+                    </main>
+                    <footer>
+                        
+                    </footer>
+                </article>
+                <article>
+                    <header>
+                        <h2>Les vidéos</h2>
+                    </header>
+                    <main>
+                        <h3>Les vidéos intégrées</h3>
+                        <p>
+                            Comment calculer les ratio des vidéos pour les rendre adaptatives
+                        </p>
+                        <div class="ratio ratio-4-3">
+                            <p>
+                                ratio 4/3
+                            </p>
+                        </div>
+                        <div class="ratio ratio-16-9">
+                            <p>
+                                ratio 16/9
+                            </p>
+                        </div>
+                        <div class="ratio ratio-21-9">
+                            <p>
+                                ratio 21/9
+                            </p>
+                        </div>
+                        <p>
+                            <a href="https://www.youtube.com/embed/rrT6v5sOwJg?si=br07DrAeRpuBRyG8" target="videoBox">
+                                Making material design
+                            </a>
+                            <a href="https://www.youtube.com/embed/oz7KYUkdlvE?si=Bd0LGAGL-vpPjRuR" target="videoBox">
+                                Rock'n'roll highschool
+                            </a>
+                        </p>
+                        <div class="ratio ratio-16-9">
+                            <iframe src="https://www.youtube.com/embed/rrT6v5sOwJg?si=br07DrAeRpuBRyG8" name="videoBox" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </main>
+                    <footer>
+
+                    </footer>
+                </article>
+                <aside>
+
+                </aside>
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

@@ -83,6 +83,7 @@ window.addEventListener('DOMContentLoaded', function(){
     textInput.addEventListener('keyup', function(evenement){
         /* contrôler si la touche relachée est bien la touche "entrée" du clavier */
         if(evenement.key === 'Enter'){
+            //console.log(evenement);
             /* le comportement a lancer si la condition est respectée */
             afficherSpan(textInput.value);
         }

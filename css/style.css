@@ -104,6 +104,8 @@ video{
     background-color: black;
 }
 
+
+
 table{
     border-collapse:collapse;
 }
@@ -174,6 +176,17 @@ figcaption{
 
 .ratio-a4-portrait{
     padding-bottom:  calc(29.7 / 21 * 100%);
+}
+
+button.lecteur{
+    font-size: 1.5rem;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+button.lecteur:hover{
+    color: #b00000;
+    cursor: pointer;
 }
 
 /* déclarations de structure  */

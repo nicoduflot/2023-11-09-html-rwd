@@ -7,6 +7,7 @@
         <meta description="Ce site est le code conçu avec les stagiaires TP concepteurs designer UI" />
         <link rel="stylesheet" href="./css/style.css" media="screen" />
         <script src="./js/chargement.js"></script>
+        <script src="./js/lecteur.js"></script>
     </head>
     <body>
         <header>
@@ -72,6 +73,17 @@
 
                             </div>
                         </p>
+                        <h2>L'audio</h2>
+                        <p>
+                            la balise <code>&lt;audio&gt;&lt;/audio&gt;</code> fonctionne sur le même principe quela balise vidéo : on peut soit intégrer la source du fichier directement dans la balise ou dans une ou plusieurs balises &lt;source/&gt; filles.
+                        </p>
+                        <figure>
+                            <audio id="musique" src="./media/audio/diablo_town.mp3" controls ></audio>
+                            <figcaption>
+                                <button class="lecteur" id="playPause"><i class="bi bi-play-circle"></i></button>
+                            </figcaption>
+                        </figure>
+                        <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=3130722031/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/track=754135272/transparent=true/" seamless><a href="https://merex.bandcamp.com/album/giant-elk">Giant Elk de ME REX</a></iframe>
                     </main>
                     <footer>
                         
@@ -89,7 +101,8 @@
                         <p>
                             il est possible de définir la source de la vidéo directement dans la balise
                         </p>
-                        <video src="./media/videos/Fallout-4-Launch-Trailer.mp4" poster="./images/cropped-wallhaven-fallout-4-01-3-1536x922.jpg" controls muted></video>
+                        <video id="video" src="./media/videos/Fallout-4-Launch-Trailer.mp4" poster="./images/cropped-wallhaven-fallout-4-01-3-1536x922.jpg"  muted></video>
+                        <button class="lecteur" id="playPauseV"><i class="bi bi-play-circle"></i></button>
                         <p>
                             Mais les vidéos possèdent aussi une balise fille <code>&lt;source /&gt;</code>
                         </p>

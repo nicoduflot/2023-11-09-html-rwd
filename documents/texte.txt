@@ -1,0 +1,5 @@
+Ceci est un fichier texte.
+
+Il peut être ouvert par le navigateur.
+
+<h2>Est-ce que les titres fonctionnent ?</h2>

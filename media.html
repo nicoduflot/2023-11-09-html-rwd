@@ -6,6 +6,7 @@
         <title>Formation HTML - Javascript</title>
         <meta description="Ce site est le code conçu avec les stagiaires TP concepteurs designer UI" />
         <link rel="stylesheet" href="./css/style.css" media="screen" />
+        <script src="./js/chargement.js"></script>
     </head>
     <body>
         <header>
@@ -48,7 +49,7 @@
                             qui permet d'ajouter une légende à l'image.
                         </p>
                         <h3>La balise img</h3>
-                        <img src="./images/poster-twitch-synthwave.jpg" alt="" />
+                        <img src="./images/poster-twitch-synthwave.jpg" alt="Poster du site twitch, streaming vidéo, réalisée par James White, dans le courant artistique nommé 'Synthwave'. Sur l'image le mot 'Twitch' est écrit avec des couleurs fluorescentes, dans les ton violet - rose" />
                         <h3>Les proportions</h3>
                         <p>
                             Attention, si on n'indique qu'une largeur à une image, la hauteur se recalcule automatiquement.
@@ -58,6 +59,19 @@
                         </p>
                         
                         <h3>Une balise img avec la balise figure</h3>
+                        <figure>
+                            <img src="./images/gundam-plane-to-robot.gif" alt="Gif animé d'un avion qui se transforme en robot, tiré de la série animé Gundam (circa 1980)" />
+                            <figcaption>
+                                Gif de la série animée Gundam
+                            </figcaption>
+                        </figure>
+                        <p>
+                            <input type="text" id="search" /> 
+                            <button id="btnChargement">Lancer le chargement</button>
+                            <div id="chargement">
+
+                            </div>
+                        </p>
                     </main>
                     <footer>
                         
@@ -68,6 +82,24 @@
                         <h2>Les vidéos</h2>
                     </header>
                     <main>
+                        <h3>Les vidéos hébergées sur le site</h3>
+                        <p>
+                            On utilisa la balise <code>&lt;video&gt;&lt;/video&gt;</code>
+                        </p>
+                        <p>
+                            il est possible de définir la source de la vidéo directement dans la balise
+                        </p>
+                        <video src="./media/videos/Fallout-4-Launch-Trailer.mp4" poster="./images/cropped-wallhaven-fallout-4-01-3-1536x922.jpg" controls muted></video>
+                        <p>
+                            Mais les vidéos possèdent aussi une balise fille <code>&lt;source /&gt;</code>
+                        </p>
+                        <p>
+                            Utiliser la balise source permet de proposer plusieurs format de vidéos (mp4, webm, avi), ce qui permet d'adapter le format aux formats qu'accepte le navigateur.
+                        </p>
+                        <video controls muted>
+                            <source src="./media/videos/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />
+                            <source src="./media/videos/Big_Buck_Bunny_360_10s_1MB.webm" type="video/webm" />
+                        </video>
                         <h3>Les vidéos intégrées</h3>
                         <p>
                             Comment calculer les ratio des vidéos pour les rendre adaptatives
@@ -95,8 +127,12 @@
                                 Rock'n'roll highschool
                             </a>
                         </p>
+                        
                         <div class="ratio ratio-16-9">
                             <iframe src="https://www.youtube.com/embed/rrT6v5sOwJg?si=br07DrAeRpuBRyG8" name="videoBox" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="ratio ratio-a4-portrait">
+                            <iframe src="./ressources/uxpin_web_ui_design_for_the_human_eye_1.pdf" frameborder="0"></iframe>
                         </div>
                     </main>
                     <footer>

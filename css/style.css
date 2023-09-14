@@ -281,6 +281,16 @@ body > main article{
     body > main > section > article{
         width: calc( 50% - 0.5rem );
     }
+
+    body > main > section > article:last-child:nth-of-type(2n + 1){
+        width: 100%!important;
+    }
+
+    form{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
  }
 
 /* X-Large devices (large desktops, 1200px and up) */

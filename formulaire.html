@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formation HTML - Javascript</title>
+        <meta description="Ce site est le code conçu avec les stagiaires TP concepteurs designer UI">
+        <link rel="stylesheet" href="./css/style.css" media="screen" >
+        <script src="./js/contactForm.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="container header-padding">
+                <h1>Formation HTML - JS</h1>
+            </div>
+        </header>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li>
+                        <a href="./index.html" target="_self" title="Lien vers la page d'accueil">
+                            Accueil
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./javascript.html" target="_self" title="Lien vers l'initiation à Javascript'">Javascript</a>
+                    </li>
+                    <li>
+                        <a href="./media.html" target="_self" title="Lien vers les media en web'">Media</a>
+                    </li>
+                    <li>
+                        <a href="./formulaire.html" target="_self" title="Lien vers les formulaire'">Formulaire</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+            <section>
+                <article>
+                    <header>
+                        <h2>Les bases HTML : les formulaires</h2>
+                    </header>
+                    <main>
+                        <p>
+                            Les formulaires servent a récupérer des informations pour traitement, par exemple,
+                            un serveur php qui pourra les enregistrer en fichier, en bdd, ou les envoyer par mail
+                        </p>
+                        <p>
+                            Un formulaire se déclare à l'aide de la balise &lt;form&gt;. Il possède des attributs,
+                            dont les plus courants et importants sont : method & action
+                        </p>
+                        <h3>method</h3>
+                        <p>
+                            méthode d'envoi des informations du formulaire, il en existe deux :
+                        </p>
+                        <ul>
+                            <li>GET : les données sont envoyées associées à des
+                                noms de variables dans l'url de la page de traitement</li>
+                            <li>POST : Les données sont transmises en variables dans
+                                l'entête HTTP.
+                            </li>
+                        </ul>
+                        <p>
+                            Si la méthode n'est pas indiquée dans le formulaire,
+                            c'est GET qui sera utilisé par défaut
+                        </p>
+                        <h3>Action</h3>
+                        <p>
+                            Indique l'url de la page de traitement des données envoyées par le formulaire.
+                            Si action n'est pas précisé, le formulaire considère que c'est la page où il
+                            se trouve qui sera la page de traitement.
+                        </p>
+                        <form id="contactForm">
+                            <fieldset>
+                                <legend>
+                                    Civilité
+                                </legend>
+                                <p>
+                                    <label for="nom">Nom : </label>
+                                    <input type="text" name="nom" id="nom" required /><span data-input="nom"></span>
+                                </p>
+                                <p>
+                                    <label for="prenom">Prénom : </label>
+                                    <input type="text" name="prenom" id="prenom" />
+                                </p>
+                                <p>
+                                    <label for="email">E-mail : </label> 
+                                    <input type="text" name="email" id="email" required /><span data-input="email"></span>
+                                </p>
+                            </fieldset>
+                            <p>
+                                <button type="submit">
+                                    Envoyer
+                                </button>
+                            </p>
+                        </form>
+                    </main>
+                    <footer>
+                        
+                    </footer>
+                </article>
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

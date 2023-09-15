@@ -1,4 +1,73 @@
 window.addEventListener('DOMContentLoaded', function(){
+
+    function recupValeur(elementAvecValeur){
+        /* 
+        attention, cette fonction est faîte pour des éléments possédant l'attribu value 
+        */
+       return elementAvecValeur.value;
+    }
+
+    let noteSite = document.querySelector('#noteSite');
+    let colorTeam = document.querySelector('#colorTeam');
+    let showPsw = document.querySelector('#showPsw');
+    let selectClasse = document.querySelector('#selectClasse');
+    
+    document.querySelector('#affNoteSite').innerHTML = recupValeur(noteSite);
+    document.querySelector('#affColorTeam').innerHTML = recupValeur(colorTeam);
+    
+    noteSite.addEventListener('change', function(){
+        document.querySelector('#affNoteSite').innerHTML = recupValeur(noteSite);
+    });
+    
+    colorTeam.addEventListener('change', function(){
+        document.querySelector('#affColorTeam').innerHTML = recupValeur(colorTeam);
+    });
+    
+    selectClasse.addEventListener('change', function(){
+        let classe = document.querySelector('#selectClasse').value;
+        console.log(classe);
+        /* créer un élément directement dans le DOM permet de l'abonner à un écouteur d'évènement  */
+        /* ça n'est pas possible quand on le fait en mettant du HTML dans le innerHTML d'un élément */
+        let b = document.createElement('b');
+        let content = document.createTextNode(classe);
+        b.append(content);
+        document.querySelector('#classeOptions').append(b);
+        b.addEventListener('click', function(){
+            console.log('l\'élément existe dans le DOM');
+        });
+        switch(classe){
+            case 'guerrier':
+            case 'moine':
+            case 'epeiste':
+                /* code a appliquer */
+            break;
+            case 'mage':
+            case 'clerc':
+            case 'mageguerre':
+                /* code a appliquer */
+            break;
+            case 'voleur':
+                /* code a appliquer */
+            break;
+            default :
+            document.querySelector('#classeOptions').innerHTML = '<b>Vous n\'avez pas choisi de classe</b>';
+        }
+    });
+
+    showPsw.addEventListener('click', function(){
+        let target = showPsw.dataset.target;
+        if(showPsw.children[0].classList.contains('bi-eye-fill')){
+            document.getElementById(target).setAttribute('type', 'text');
+            showPsw.children[0].classList.remove('bi-eye-fill');
+            showPsw.children[0].classList.add('bi-eye-slash-fill');
+        }else{
+            document.getElementById(target).setAttribute('type', 'password');
+            showPsw.children[0].classList.remove('bi-eye-slash-fill');
+            showPsw.children[0].classList.add('bi-eye-fill');
+        }
+    });
+    
+
     let contactForm = document.querySelector('#contactForm');
     let submitForm = document.querySelector('form#contactForm [type="submit"]');
 

@@ -70,7 +70,7 @@
                             Si action n'est pas précisé, le formulaire considère que c'est la page où il
                             se trouve qui sera la page de traitement.
                         </p>
-                        <form id="contactForm">
+                        <form id="contactForm" method="get">
                             <fieldset>
                                 <legend>
                                     Civilité
@@ -87,6 +87,61 @@
                                     <label for="email">E-mail : </label> 
                                     <input type="text" name="email" id="email" required /><span data-input="email"></span>
                                 </p>
+                            </fieldset>
+                            <fieldset>
+                                <legend>
+                                    Votre demande
+                                </legend>
+                                <p>
+                                    <label>
+                                        Choississez des options
+                                    </label><br />
+                                    <input type="checkbox" name="option1" id="option1" value="ma valeur" checked /> <label for="option1"> Une option (gratuite)</label><br />
+                                    <input type="checkbox" name="option2" id="option2" /> <label for="option1"> Une autre option</label><br />
+                                    <input type="checkbox" name="option3" id="option3" /> <label for="option1"> Une dernière option</label>
+                                </p>
+                                <p>
+                                    <label>
+                                        Votre tranche d'âge
+                                    </label><br />
+                                    <input type="radio" name="age" id="moins18" checked /> <label for="moins18">Moins de 18 ans</label><br />
+                                    <input type="radio" name="age" id="1825" /> <label for="1825">De 18 à moins de 25 ans</label><br />
+                                    <input type="radio" name="age" id="2650" /> <label for="2650">De 25 à moins de 50 ans</label><br />
+                                    <input type="radio" name="age" id="50plus" /> <label for="50plus">50 ans et plus</label><br />
+                                </p>
+                                <p>
+                                    <label for="noteSite">Vous pouvez noter le site (1 à 10)</label><br />
+                                    <input type="range" min="0" max="10" value="10" step="0.5" name="noteSite" id="noteSite" /> <span id="affNoteSite"></span> / 10
+                                </p>
+                                <p>
+                                    <label for="colorTeam">Vous pouvez noter le site (1 à 10)</label><br />
+                                    <input type="color" value="#b00000" name="colorTeam" id="colorTeam" /> <span id="affColorTeam"></span>
+                                </p>
+                                <p>
+                                    <input type="password" name="psw" id="psw" /> 
+                                    <button class="lecteur" type="button" id="showPsw" data-target="psw"><i class="bi bi-eye-fill"></i></button>
+                                </p>
+                                <p>
+                                    <select name="selectClasse" id="selectClasse">
+                                        <option value="" selected>
+                                            Choisir une classe
+                                        </option>
+                                        <optgroup label="Combat">
+                                            <option value="guerrier">Guerrier</option>
+                                            <option value="moine">Moine</option>
+                                            <option value="epeiste">Épéiste</option>
+                                        </optgroup>
+                                        <optgroup label="Magie">
+                                            <option value="mage">Mage</option>
+                                            <option value="clerc">Clerc</option>
+                                            <option value="mageguerre">Mage de guerre</option>
+                                        </optgroup>
+                                        <option value="voleur">Voleur</option>
+                                    </select>
+                                </p>
+                                <div id="classeOptions">
+                                    
+                                </div>
                             </fieldset>
                             <p>
                                 <button type="submit">
